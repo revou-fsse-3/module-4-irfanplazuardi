@@ -44,6 +44,11 @@ const List = () => {
     } catch (error) {}
   };
 
+  const handleLogout = () => {
+    window.localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <div className="content">
       <Container maxWidth="md">
@@ -105,7 +110,7 @@ const List = () => {
               </TableFooter>
             </Table>
           </TableContainer>
-          <Button variant="contained" onClick={() => navigate("/login")}>
+          <Button variant="contained" onClick={handleLogout}>
             logout
           </Button>
         </div>
